@@ -31,9 +31,9 @@ const PaintScene = dynamic(() => import("../three/PaintScene"), {
 });
 
 const STEPS = [
-  { title: "Bottle khulti hai", text: "Aapka chuna hua shade, brush par." },
-  { title: "Neeche se upar, ek smooth coat", text: "Cuticle se tip tak, even colour." },
-  { title: "Glossy finish", text: "Clear, high-shine top coat jaisa look." },
+  { title: "The bottle opens", text: "Your chosen shade, on the brush." },
+  { title: "One smooth coat, base to tip", text: "Even colour from cuticle to tip." },
+  { title: "Glossy finish", text: "A clear, high-shine look." },
 ];
 
 // Timeline positions (0–1 of the section's scroll) where each caption takes over.
@@ -110,13 +110,13 @@ export function PaintSection() {
       >
         <div className="relative z-10 pt-10 md:pt-0">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-henna/70">
-            Scroll karke dekho
+            Scroll to paint
           </p>
           <h2
             id="paint-title"
             className="font-display text-[clamp(2rem,7.5vw,3.75rem)] leading-[1.05]"
           >
-            Ek coat, neeche se upar.
+            One flawless coat, base to tip.
           </h2>
 
           <div className="mt-6 flex gap-4 md:mt-10">
@@ -152,7 +152,7 @@ export function PaintSection() {
           <p className="mt-5 text-sm md:mt-10">
             Shade: <strong>{shade.name}</strong>{" "}
             <a href="#shades" className="ml-1 font-bold underline underline-offset-4">
-              Shade badlo
+              Change shade
             </a>
           </p>
         </div>

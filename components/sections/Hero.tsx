@@ -77,11 +77,11 @@ export function Hero() {
             id="hero-title"
             className="font-display text-[clamp(2.4rem,11vw,5.25rem)] leading-[1.02] text-white"
           >
-            Salon-style nails, <span className="text-blush">ab aapke ghar par</span>
+            Salon-style nails, <span className="text-blush">right at your doorstep</span>
           </h1>
           <p className="mt-6 hidden max-w-md text-lg leading-relaxed text-blush/85 md:block">
-            Rinku {CONTACT.city} mein aapke ghar aakar nails karti hai. Shade chuno, WhatsApp
-            karo, aur ghar baithe nails ready.
+            Rinku brings a professional nail service to your home in {CONTACT.city}. Choose
+            your shade, send a WhatsApp message, and relax.
           </p>
           <div data-cta className="mt-9 hidden flex-wrap gap-3 md:flex">
             <WhatsAppButton variant="light" />
@@ -93,7 +93,7 @@ export function Hero() {
 
         <div className="relative z-10 md:hidden">
           <p className="mb-4 text-[15px] leading-snug text-blush/85">
-            Rinku aapke ghar aakar nails karti hai — sirf WhatsApp karo.
+            Professional nail service at your home in {CONTACT.city}.
           </p>
           <div data-cta className="flex gap-2">
             <WhatsAppButton variant="light" className="flex-1 px-4" />

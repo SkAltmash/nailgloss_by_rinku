@@ -20,7 +20,7 @@ const karla = Karla({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 const title = `${CONTACT.name} — Doorstep nail technician in ${CONTACT.city}`;
-const description = `Salon-style nails, ab aapke ghar par. Nail extensions, gel polish, nail art aur press-on nails — ${CONTACT.city} mein doorstep service. WhatsApp par book karein.`;
+const description = `Salon-style nails at your doorstep. Nail extensions, gel polish, nail art and press-on nails — a doorstep nail service in ${CONTACT.city}. Book on WhatsApp.`;
 
 // Only advertise an Open Graph image if one actually ships in /public.
 const ogImage = publicFileExists("og.png")

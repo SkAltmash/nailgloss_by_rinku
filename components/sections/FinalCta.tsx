@@ -19,11 +19,11 @@ export function FinalCta() {
             id="book-title"
             className="font-display text-[clamp(2.25rem,9vw,4.5rem)] leading-[1.03] text-white"
           >
-            Agla nail day, <span className="text-blush">ghar par.</span>
+            Your next nail appointment, <span className="text-blush">at home.</span>
           </h2>
           <p className="mx-auto mt-5 max-w-md text-blush/85">
-            WhatsApp par apna shade, date aur area bhejo — Rinku {CONTACT.city} mein aapke ghar
-            aayegi.
+            Send your shade, date and area on WhatsApp — Rinku will come to your home in{" "}
+            {CONTACT.city}.
           </p>
           <div data-cta className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <WhatsAppButton variant="light" showShade className="w-full sm:w-auto" />
@@ -64,7 +64,15 @@ export function FinalCta() {
           <p className="text-xs text-blush/60 md:text-right">
             © {CONTACT.name}
             <br />
-            Website by Altamash
+            Architected by{" "}
+            <a
+              href="https://zaref.in"
+              target="_blank"
+              rel="noopener"
+              className="font-bold text-blush/85 underline-offset-4 hover:text-white hover:underline"
+            >
+              Zaref Technology
+            </a>
           </p>
         </div>
       </footer>

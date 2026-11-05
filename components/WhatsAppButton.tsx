@@ -18,16 +18,19 @@ export function WhatsAppButton({
   variant = "light",
   className = "",
   showShade = false,
+  service,
 }: {
   label?: string;
   variant?: Variant;
   className?: string;
   showShade?: boolean;
+  /** Adds the service name to the pre-filled message. */
+  service?: string;
 }) {
   const { shade } = useShade();
   return (
     <a
-      href={whatsappLink(shade.name)}
+      href={whatsappLink(shade.name, service)}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full px-6 py-3 text-base font-bold tracking-wide transition-colors ${VARIANTS[variant]} ${className}`}

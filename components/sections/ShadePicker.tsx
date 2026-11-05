@@ -47,10 +47,10 @@ export function ShadePicker() {
             id="shades-title"
             className="font-display text-[clamp(2rem,7vw,3.5rem)] leading-[1.05]"
           >
-            Apna shade chuno
+            Choose your shade
           </h2>
           <p className="mt-4 max-w-md text-henna/80">
-            Jo shade aap chunoge, wahi aapke WhatsApp booking message mein chala jayega.
+            Your selected shade is added to your WhatsApp booking message automatically.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export function ShadePicker() {
 
           <div className="mt-6 border-l-2 border-chrome pl-4 text-sm text-henna/70">
             <span className="block text-xs font-bold uppercase tracking-widest text-henna/50">
-              Aapka WhatsApp message
+              Your WhatsApp message
             </span>
             <span className="break-words">{whatsappMessage(shade.name)}</span>
           </div>

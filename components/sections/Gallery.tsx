@@ -1,14 +1,20 @@
 import Image from "next/image";
 import { CONTACT } from "@/lib/data";
+import { DEMO_PHOTOS, SHOW_DEMO_CONTENT } from "@/lib/demo";
 import { listPublicImages } from "@/lib/media";
 import { InstagramIcon } from "../icons";
 
 /**
- * Shows Rinku's real work from /public/gallery/. Until photos are added, the
- * section points visitors to her Instagram instead of showing empty tiles.
+ * Shows Rinku's real work from /public/gallery/. Until photos are added it
+ * shows demo stock photos (if enabled), otherwise an Instagram feature.
  */
 export function Gallery() {
-  const images = listPublicImages("gallery");
+  const real = listPublicImages("gallery").map((src, i) => ({
+    src,
+    alt: `Nail work by Rinku, photo ${i + 1}`,
+  }));
+  const isDemo = real.length === 0 && SHOW_DEMO_CONTENT;
+  const images = isDemo ? DEMO_PHOTOS : real;
 
   return (
     <section id="gallery" aria-labelledby="gallery-title" className="bg-blush text-henna">
@@ -24,19 +30,25 @@ export function Gallery() {
                   id="gallery-title"
                   className="font-display text-[clamp(2rem,7vw,3.5rem)] leading-[1.05]"
                 >
-                  Rinku ka kaam
+                  {isDemo ? "Nail inspiration" : <>Rinku&apos;s work</>}
                 </h2>
               </div>
               <InstagramLink />
             </div>
 
             <ul className="mt-10 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3">
-              {images.map((src, i) => (
-                <li key={src} className={i % 3 === 1 ? "md:translate-y-8" : ""}>
-                  <div className="nail-top relative aspect-[4/5] overflow-hidden bg-chrome">
+              {images.map(({ src, alt }, i) => (
+                <li
+                  key={src}
+                  className={`${i % 3 === 1 ? "md:translate-y-8" : ""} ${
+                    // Keep the 2-column mobile grid even.
+                    images.length % 2 === 1 && i === images.length - 1 ? "max-md:hidden" : ""
+                  }`}
+                >
+                  <div className="nail-top relative aspect-4/5 overflow-hidden bg-chrome">
                     <Image
                       src={src}
-                      alt={`Nail work by Rinku, photo ${i + 1}`}
+                      alt={alt}
                       fill
                       sizes="(min-width: 768px) 33vw, 50vw"
                       className="object-cover"
@@ -63,7 +75,7 @@ function InstagramLink() {
       className="inline-flex min-h-11 items-center gap-2 rounded-full font-bold underline-offset-4 hover:underline"
     >
       <InstagramIcon className="size-5" />
-      Instagram par aur dekho
+      See more on Instagram
     </a>
   );
 }
@@ -95,11 +107,11 @@ function InstagramFeature() {
           id="gallery-title"
           className="font-display text-[clamp(2rem,7vw,3.5rem)] leading-[1.05]"
         >
-          Rinku ka kaam, Instagram par
+          Rinku&apos;s work, on Instagram
         </h2>
         <p className="mx-auto mt-4 max-w-md text-henna/80 md:mx-0">
-          Latest designs, shades aur client nails — sab Rinku ke Instagram par. Pasand aaye
-          design ka screenshot WhatsApp par bhej do.
+          The latest designs, shades and client nails are on Rinku&apos;s Instagram. Found a
+          design you love? Send the screenshot on WhatsApp.
         </p>
         <a
           href={CONTACT.instagramUrl}
@@ -108,7 +120,7 @@ function InstagramFeature() {
           className="mt-8 inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-henna px-6 py-3 font-bold text-blush transition-colors hover:bg-henna-deep"
         >
           <InstagramIcon className="size-5" />
-          Instagram par dekho
+          View on Instagram
         </a>
       </div>
     </div>

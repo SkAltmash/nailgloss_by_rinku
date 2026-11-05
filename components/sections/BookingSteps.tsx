@@ -5,13 +5,13 @@ export function BookingSteps() {
     <section id="booking" aria-labelledby="booking-title" className="bg-white text-henna">
       <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
         <p className="mb-3 text-xs font-bold uppercase tracking-[0.22em] text-henna/70">
-          Booking kaise hoti hai
+          How booking works
         </p>
         <h2
           id="booking-title"
           className="max-w-2xl font-display text-[clamp(2rem,7vw,3.5rem)] leading-[1.05]"
         >
-          Teen steps, aur nails ghar par
+          Three simple steps
         </h2>
 
         <ol className="relative mt-14 grid gap-12 md:grid-cols-3 md:gap-8">

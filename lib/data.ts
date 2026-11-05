@@ -70,7 +70,7 @@ export interface Service {
   id: string;
   name: string;
   blurb: string;
-  /** Set the confirmed rate (e.g. "₹1,200") — null shows "Rate on WhatsApp". */
+  /** Set the confirmed rate (e.g. "₹1,200") — null shows "Price on request". */
   price: string | null;
   /** Shade used for this service's floating 3D nail. */
   shadeId: ShadeId;
@@ -80,28 +80,28 @@ export const SERVICES: Service[] = [
   {
     id: "extensions",
     name: "Nail extensions",
-    blurb: "Natural nails par length aur shape add karne ke liye.",
+    blurb: "Added length and shape over your natural nails.",
     price: null,
     shadeId: "nude",
   },
   {
     id: "gel",
     name: "Gel polish",
-    blurb: "Glossy gel finish, aapke chune hue shade mein.",
+    blurb: "A glossy gel finish in the shade of your choice.",
     price: null,
     shadeId: "red",
   },
   {
     id: "art",
     name: "Nail art",
-    blurb: "Aapke chune hue design ke saath custom art.",
+    blurb: "Custom nail art based on the design you choose.",
     price: null,
     shadeId: "chrome",
   },
   {
     id: "press-on",
     name: "Press-on nails",
-    blurb: "Ready-to-wear nails jo ghar par aasani se lag jaate hain.",
+    blurb: "Ready-to-wear nails that are easy to apply at home.",
     price: null,
     shadeId: "plum",
   },
@@ -109,15 +109,15 @@ export const SERVICES: Service[] = [
 
 export const BOOKING_STEPS = [
   {
-    title: "Design chuno",
-    text: "Upar shade picker se ya Instagram se apna pasandida design select karo.",
+    title: "Choose your design",
+    text: "Pick a shade above, or select a design you like from Instagram.",
   },
   {
-    title: "WhatsApp par date aur area bhejo",
-    text: "Message pehle se ready hai — bas date aur apna area likh do.",
+    title: "Send your date and area on WhatsApp",
+    text: "The message is pre-filled — just add your preferred date and area.",
   },
   {
-    title: "Rinku aapke ghar aayegi",
-    text: "Salon jaane ki zaroorat nahi. Rinku tay date par aapke ghar aayegi.",
+    title: "Rinku comes to your home",
+    text: "No salon visit needed. Rinku arrives at your home on the agreed date.",
   },
 ] as const;
